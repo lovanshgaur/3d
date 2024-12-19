@@ -7,6 +7,9 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+// Enable WebXR support
+renderer.xr.enabled = true; // Enable XR
+
 // Load the 360 video as a texture
 const video = document.createElement('video');
 video.src = 'test.mp4'; // Ensure the video file path is correct
@@ -76,6 +79,7 @@ document.getElementById('volumeControl').addEventListener('input', (event) => {
 
 // Animation loop
 function animate() {
+    texture.needsUpdate = true; // Ensure the texture updates
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
 }
