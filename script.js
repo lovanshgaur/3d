@@ -12,7 +12,7 @@ const video = document.createElement('video');
 video.src = 'test.mp4'; // Ensure the video file path is correct
 video.crossOrigin = 'anonymous';
 video.loop = true;
-video.muted = true; // Ensure the video is muted to allow autoplay
+video.muted = false; // Ensure the video is muted to allow autoplay
 video.playsInline = true; // Ensure it plays inline on iOS
 video.autoplay = true; // Ensure it starts playing automatically
 
